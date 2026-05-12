@@ -1,606 +1,1048 @@
+/*
+    PUP ITech Feedback System Styles
+    - Contains layout and component styling for header, survey, results, and about sections.
+    - Includes interactive button, form, and rating component styles.
+*/
+/* ================================
+   1. GLOBAL STYLES
+   Base styles for the whole site
+   ================================ */
 body {
-  margin: 0;
-  background-color: #f4f4f4;
-  color: #333;
-}
-/* Header bar */
-header {
-  background-color: #7b1e1e;
-  color: #fff;
-  padding: 15px 30px;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
+    margin: 0;
+    background-color: #f4f4f4;
+    color: #333;
 }
 
-header h1 {
-  font-size: 20px;
-  font-weight: bold;
+
+
+
+/* ================================
+   2. HEADER & NAVIGATION
+   Alternative header implementations and nav buttons
+   ================================ */
+header {
+    background-color: #7b1e1e;
+    color: #fff;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: space-evenly;
 }
+
+
+
+
+header img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+
+
 
 header nav a {
-  color: #fff;
-  margin-left: 20px;
-  text-decoration: none;
-  font-weight: 500;
+    color: #fff;
+    margin-left: 20px;
+    text-decoration: none;
+    font-weight: 500;
 }
+
+
+
 
 header nav a:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
+
+
+
 
 #header {
-  display: flex;
-  align-items: center;
-  justify-content: center; 
-  position: relative;
-  background-color: rgba(123, 30, 30, 1); 
-  padding: 15px;
-  color: white;
+    display: flex;
+    align-items: left;
+    justify-content: left;
+    position: relative;
+    background-color: #7b1e1e;
+    padding: 15px;
+    color: white;
 }
+
+
+
 
 #header img {
-  height: 50px; 
-  margin-right: 50px;
-  size: 16px;
-
+    height: 50px;
+    margin-right: 40px;
+    size: 16px;
+    display: flex;
+    align-items: center;
 }
+
+
+
 
 #title {
-  margin: 0;
-  text-align: right;
-  color:#fff;
+    margin: 0;
+    text-align: right;
+    color: #fff;
+    font-size: 40px;
 }
+
+
+
 
 #nav {
-  position: absolute;
-  right: 20px; 
-  top: 50%;
-  transform: translateY(-50%);
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
 }
+
+
+
 
 #nav button {
-  margin-left: 5px;
-  padding: 8px 12px;
-  cursor: pointer;
-  font-family: "Segoe UI", Arial, sans-serif;
-  font-size: 20px;
-  background-color: rgba(123, 30, 30, 1);
-  color: white;
-  border: 16px;
-  border-radius: 16px;
-  gap: 10px;
+    margin-left: 5px;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 20px;
+    background-color: rgba(123, 30, 30, 1);
+    color: white;
+    border: 16px;
+    border-radius: 16px;
+    gap: 10px;
 }
 
+
+
+
 #nav button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.3);
-  background-color: rgba(180, 60, 60, 1);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+    background-color: rgba(180, 60, 60, 1);
 }
+
+
+
+
+/* ================================
+   3. SECTION TOGGLE SYSTEM
+   Show/hide visible sections using JS
+   ================================ */
+.section {
+    display: none;
+}
+
+
+
+
+.section.active {
+    display: block;
+}
+
+
+
+
+@keyframes slideUp {
+    from {
+        opacity: 0.5;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
 
 
 .section {
-
-  display: none;
-  
+    animation: slideUp 0.5s ease-in;
 }
 
-.section.active {
 
-  display: block;
-  
-}
 
+
+/* ================================
+   4. HOME SECTION
+   Landing page content styles
+   ================================ */
 #homecontent {
-  border-radius: 12px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh; /* flexible height */
-  margin: 5% 15%;
-  padding: 40px;
-  text-align: justify;
-  background: linear-gradient(135deg, #7b1e1e, #a33c3c); /* gradient for depth */
-  color: #fff;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.3); /* subtle shadow */
-  font-family: "Segoe UI", Arial, sans-serif;
-  line-height: 1.6;
-  gap: 20px; /* spacing between elements */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 40%;
+    margin: 5% 15%;
+    padding-left: 8%;
+    padding-right: 8%;
+    padding-bottom: 8%;
+    padding-top: 3%;
+    text-align: justify;
+    background: linear-gradient(135deg, #7b1e1e, #a33c3c);
+    color: #fff;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    font-family: "Segoe UI", Arial, sans-serif;
+    line-height: 1.6;
+    gap: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+
+
 
 #homecontent:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
 }
+
+
+
 
 #homecontent h2 {
-  font-size: 2.2rem;
-  margin-bottom: 15px;
-  color: #ffd166; /* accent color for title */
+    font-size: 30px;
+    font-weight: bolder;
+    margin-bottom: 10px;
+    color: #ffd166;
+    margin-top: 0;
 }
+
+
+
 
 #homecontent p {
-  max-width: 800px;
-  font-size: 1.1rem;
+    max-width: 1100px;
+    font-size: 20px;
+    font-weight: 600;
 }
+
+
+
 
 #homecontent button {
-  background-color: #ff7f50;
-  color: #fff;
-  border: none;
-  padding: 12px 24px;
-  border-radius: 8px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+    background-color: #ff7f50;
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
+
+
+
 
 #homecontent button:hover {
-  background-color: #ff5722;
+    background-color: #ff5722;
 }
 
 
+
+
+/* ================================
+   5. RESULTS SECTION
+   Styles for the feedback results panel
+   ================================ */
 #resultscontent {
-  border-radius: 12px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh; /* flexible height */
-  margin: 5% 15%;
-  padding: 40px;
-  text-align: justify;
-  background: linear-gradient(135deg, #7b1e1e, #a33c3c); /* gradient for depth */
-  color: #fff;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.3); /* subtle shadow */
-  font-family: "Segoe UI", Arial, sans-serif;
-  line-height: 1.6;
-  gap: 20px; /* spacing between elements */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 5% 15%;
+    padding: 40px;
+    text-align: justify;
+    background: linear-gradient(135deg, #7b1e1e, #a33c3c);
+    color: #fff;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    font-family: "Segoe UI", Arial, sans-serif;
+    line-height: 1.6;
+    gap: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+
+
 
 #resultscontent:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
 }
+
+
 
 
 #resultscontent h2 {
-  font-family: "Segoe UI", Arial, sans-serif;
-  font-size: 32px;
-  font-weight: bold;
-  margin-bottom: 20px;
-  letter-spacing: 1px;
-  color: #ffd166; /* accent color for title */
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    color: #ffd166;
 }
+
+
+
 
 #resultscontent p {
-  max-width: 600px;
-  font-size: 16px;
-  opacity: 0.9;
+    max-width: 1100px;
+    font-size: 20px;
+    font-weight: 600;
 }
+
+
+
 
 .result-card {
-  background: #fff;
-  color: #333;
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  width: 100%;
-  max-width: 700px;
-  text-align: left;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+    background: #fff;
+    color: #333;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 700px;
+    text-align: left;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+
+
+
 
 .result-card h2 {
-  font-size: 20px;
-  margin-bottom: 10px;
-  color: #7b1e1e; /* tie back to theme */
+    font-size: 30px;
+    margin-bottom: 10px;
+    color: #7b1e1e;
 }
+
+
+
 
 .result-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
 }
 
 
+
+
+/* ================================
+   6. SURVEY SECTION PART 1
+   Personal information fields
+   ================================ */
 #surveycontent {
-  max-width: 68%;
-  margin: 40px auto;
-  padding: 30px;
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-  font-family: "Times new roman", serif;
-  color: #7b1e1e;
-  font-weight:600;
-  font-size:30px;
-}
-
-h1 { /*Student Feedback Form*/
-  text-align: center;
-  font-family: "Times New Roman", serif;
-  color: #7b1e1e; /* maroon accent */
-  font-size: 50px;
-  margin-bottom: 20px;
-}
-
-.form-group {
-  margin: 20px 0;
-  font-size: 16px;
-}
-
-label { /*Full name & Email Address*/
-  display: block;
-  margin-bottom: 6px;
-  font-weight: 600;
-  font-family: "Times New Roman", serif;
-  font-size: 20px;
-  color: #7b1e1e; /* maroon accent */
-;
-}
-
-input[type="text"],
-input[type="email"] {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 14px;
-  transition: border-color 0.2s, box-shadow 0.2s;
-}
-
-input[type="text"]:focus,
-input[type="email"]:focus {
-  border-color: #7b1e1e;
-  box-shadow: 0 0 6px rgba(123,30,30,0.4);
-  outline: none;
-}
-
-.checkbox-group {
-  display: flex;
-  align-items: center;
-  margin-top: 10px;
-
-}
-
-.checkbox-group input {
-  margin-right: 8px;
-
-}
-
-.checkbox-group label { /*Anonymous Button*/
-  font-size: 20px;
-  font-weight: 600;
-  margin-bottom: 0%;
-  color: #7b1e1e;
-}
-
-
-#surveycontent2 {
-  display: flex;
-  flex-direction: column;
-  gap: 25px;               /* spacing bawat section */
-  margin: 5% 15%;
-  padding: 30px;
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-  font-family: "Segoe UI", Arial, sans-serif;
-  color: #333;
-}
-
-form {
-  background: #f9f9f9;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-form h3, form p { /* section titles and questions */
-  margin-bottom: 8px;
-  font-weight: bold;
-  font-size: 20px;
-  color: #7b1e1e; 
-}
-
-form label {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 10px;
-  border-radius: 6px;
-  transition: background 0.2s, color 0.2s;
-  font-family: "Times New Roman", serif;
-  color:#7b1e1e;
-}
-
-form label:hover {
-  background: #eef6ff;
-  color: #0078d7;
-}
-
-input[type="text"], input[type="email"] {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  width: 100%;
-}
-
-
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;              /* uniform spacing bawat option */
-  margin-bottom: 25px;    /* space between sections */
-}
-
-form label {
-  display: flex;
-  align-items: center;    /* pantay si checkbox/radio at text */
-  gap: 8px;               /* space between input at text */
-  padding: 8px 10px;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  background: #f9f9f9;
-  cursor: pointer;
-  transition: background 0.2s, border-color 0.2s;
-}
-
-form label:hover {
-  background: #eef6ff;
-  border-color: #0078d7;
-}
-
-form input[type="checkbox"],
-form input[type="radio"] {
-  flex-shrink: 0;         /* para hindi lumiit yung input */
-}
-
-/* Likert Scale */
-
-.likert-question {
-  margin: 25px 0;
-  font-size: 16px;
-  font-weight: 500;
-}
-
-.likert-scale {
-  display: flex;
-  justify-content: space-evenly; /* pantay ang spacing */
-  margin-top: 15px;
-}
-
-.likert-scale label {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  cursor: pointer;
-  font-size: 14px;
-  gap: 10px;
-}
-
-.likert-scale input[type="radio"] {
-  display: none; /* hide default radio */
-}
-
-.circle {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  display: inline-block;
-  transition: transform 0.2s ease;
-}
-
-.red { background: #e74c3c; }
-.orange { background: #e67e22; }
-.yellow { background: #f1c40f; }
-.lightgreen { background: #2ecc71; }
-.green { background: #27ae60; }
-
-.likert-scale input[type="radio"]:checked + .circle {
-  transform: scale(1.2);
-  box-shadow: 0 0 8px rgba(0,0,0,0.3);
-}
-
-/*Star Rating*/
-.star-question {
-  margin: 25px 0;
-  font-size: 16px;
-  font-weight: 500;
-}
-
-.star-rating {
-  display: flex;
-  flex-direction: row-reverse; /* para mag-fill left to right */
-  justify-content: space-evenly;
-  gap: 5px;
-}
-
-.star-rating input {
-  display: none; /* hide default radio */
-}
-
-.star-rating label {
-  font-size: 30px;
-  color: #ccc;
-  cursor: pointer;
-  transition: color 0.2s, transform 0.2s;
-}
-
-.star-rating input:checked ~ label {
-  color: gold;
-}
-
-.star-rating label:hover,
-.star-rating label:hover ~ label {
-  color: gold;
-  transform: scale(1.2);
-}
-
-/*Frequency Scale*/
-.frequency-question {
-  margin: 25px 0;
-  font-size: 16px;
-  font-weight: 500;
-}
-
-.frequency-scale {
-  display: flex;
-  justify-content: space-evenly; /* pantay ang spacing */
-  margin-top: 15px;
-}
-
-.frequency-scale label {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  cursor: pointer;
-  font-size: 14px;
-  gap: 6px;
-}
-
-.frequency-scale input[type="radio"] {
-  display: none;
-}
-
-.circle {
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  display: inline-block;
-  transition: transform 0.2s ease;
-}
-
-.red { background: #e74c3c; }
-.orange { background: #e67e22; }
-.yellow { background: #f1c40f; }
-.lightgreen { background: #2ecc71; }
-.green { background: #27ae60; }
-
-.frequency-scale input[type="radio"]:checked + .circle {
-  transform: scale(1.2);
-  box-shadow: 0 0 8px rgba(0,0,0,0.3);
+    max-width: 50%;
+    margin: 40px auto;
+    padding: 30px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    font-family: "Times new roman", serif;
+    color: #7b1e1e;
+    font-weight: 600;
+    font-size: 30px;
 }
 
 
 
-/*About Section*/
-#aboutcontent {
-  border-radius: 12px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh; /* flexible height */
-  margin: 5% 15%;
-  padding: 40px;
-  text-align: justify;
-  background: linear-gradient(135deg, #7b1e1e, #a33c3c); /* gradient for depth */
-  color: #fff;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.3); /* subtle shadow */
-  font-family: "Segoe UI", Arial, sans-serif;
-  line-height: 1.6;
-  gap: 20px; /* spacing between elements */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
 
-#aboutcontent:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
-}
-
-#aboutcontent h2 {
-  font-size: 2.2rem;
-  margin-bottom: 15px;
-  color: #ffd166; /* accent color for title */
-}
-
-#aboutcontent p {
-  max-width: 800px;
-  font-size: 1.1rem;
-}
-
-#aboutcontent button {
-  background-color: #ff7f50;
-  color: #fff;
-  border: none;
-  padding: 12px 24px;
-  border-radius: 8px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-#aboutcontent button:hover {
-  background-color: #ff5722;
+#surveycontent h1 {
+    text-align: center;
+    font-family: "Times New Roman", serif;
+    color: #7b1e1e;
+    font-size: 30px;
+    margin-bottom: 20px;
 }
 
 
-#surveybtn {
 
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  padding: 14px 20px;
-  background: linear-gradient(135deg, #7b1e1e, #a83232);
-  color: yellow;
-  border: none;
-  border-radius: 50px;
-  font-size: 20px;
-  font-weight: bold;
-  cursor: pointer;
-  z-index: 1000;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease;
-}
 
-#surveybtn:hover {
-  transform: scale(1.08);
-  box-shadow: 0 6px 14px rgba(0,0,0,0.4);
-  background: linear-gradient(135deg, #a83232, #c94f4f);
-}
-
-#surveybtn:active {
-  transform: scale(0.95);
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+#surveycontent h3 {
+    font-size: 25px;
+    font-family: 'Times New Roman', Times, serif;
+    color: #7b1e1e;
 }
 
 
-#submitbtn {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  padding: 14px 20px;
-  background: linear-gradient(135deg, #7b1e1e, #a83232);
-  color: yellow;
-  border: none;
-  border-radius: 50px;
-  font-size: 20px;
-  font-weight: bold;
-  cursor: pointer;
-  z-index: 1000;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease;
-}
 
-#submitbtn:hover {
-  transform: scale(1.08);
-  box-shadow: 0 6px 14px rgba(0,0,0,0.4);
-  background: linear-gradient(135deg, #a83232, #c94f4f);
-}
-
-#submitbtn:active {
-  transform: scale(0.95);
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-}
 
 label {
     display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    font-family: "Times New Roman", serif;
+    font-size: 20px;
+    color: #7b1e1e;
+}
+
+
+hr {
+
+
+    border: 1px solid #7b1e1e;
+    border-top: 1px solid #7b1e1e;
+    margin: 5px 0;
+}
+
+
+
+
+.yearlevel, .program {
+    margin-top: 3%;
+}
+
+
+select {
+
+
+    width: 98.5%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+
+
+
+ input[type="text"], input[type="email"] {
+    width: 95%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+
+
+
+input[type="text"]:focus, input[type="email"]:focus {
+    border-color: #7b1e1e;
+    box-shadow: 0 0 6px rgba(123, 30, 30, 0.4);
+    outline: none;
+}
+
+
+
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+
+
+
+.checkbox-group input {
+    margin-right: 8px;
+}
+
+
+
+
+.checkbox-group label {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 0%;
+    color: #7b1e1e;
+}
+
+
+
+
+/* ================================
+   7. SURVEY SECTION PART 2
+   Questionnaire forms and controls
+   ================================ */
+#surveycontent2 {
+    max-width: 50%;
+    margin: 40px auto;
+    padding: 30px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    font-family: "Times new roman", serif;
+    color: #7b1e1e;
+    font-weight: 600;
+    font-size: 30px;
+}
+
+
+form {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+
+
+
+form h3, form p {
     margin-bottom: 8px;
-  }
+    font-weight: bold;
+    font-size: 20px;
+    color: #7b1e1e;
+}
+
+
+
+
+form label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background: #f9f9f9;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s;
+    font-family: "Times New Roman", serif;
+    color: #7b1e1e;
+}
+
+
+
+
+form label:hover {
+    background: #eef6ff;
+    border-color: #0078d7;
+}
+
+
+
+
+form input[type="checkbox"], form input[type="radio"] {
+    flex-shrink: 0;
+}
+
+
+
+
+/* ================================
+   8. LIKERT SCALE COMPONENT
+   5-point rating selection
+   ================================ */
+.likert-question {
+    margin: 25px 0;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+
+
+
+.likert-scale {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 15px;
+}
+
+
+
+
+.likert-scale label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    font-size: 14px;
+    gap: 10px;
+}
+
+
+
+
+.likert-scale input[type="radio"] {
+    display: none;
+}
+
+
+
+
+.circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: inline-block;
+    transition: transform 0.2s ease;
+}
+
+
+
+
+.red { background: #e74c3c; }
+.orange { background: #e67e22; }
+.yellow { background: #f1c40f; }
+.lightgreen { background: #2ecc71; }
+.green { background: #27ae60; }
+
+
+
+
+.likert-scale input[type="radio"]:checked + .circle {
+    transform: scale(1.2);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+
+
+
+
+/* ================================
+   9. STAR RATING COMPONENT
+   Instructor rating stars
+   ================================ */
+.star-question {
+    margin: 25px 0;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+
+
+
+.star-rating {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
+    gap: 5px;
+}
+
+
+
+
+.star-rating input {
+    display: none;
+}
+
+
+
+
+.star-rating label {
+    font-size: 30px;
+    color: #ccc;
+    cursor: pointer;
+    transition: color 0.2s, transform 0.2s;
+}
+
+
+
+
+.star-rating input:checked ~ label {
+    color: gold;
+}
+
+
+
+
+.star-rating label:hover, .star-rating label:hover ~ label {
+    color: gold;
+    transform: scale(1.2);
+    text-shadow: 0 0 5px gold;
+}
+
+
+
+
+/* ================================
+   10. FREQUENCY SCALE COMPONENT
+   Never to Always rating
+   ================================ */
+.frequency-question {
+    margin: 25px 0;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+
+
+
+.frequency-scale {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 15px;
+}
+
+
+
+
+.frequency-scale label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    font-size: 14px;
+    gap: 6px;
+}
+
+
+
+
+.frequency-scale input[type="radio"] {
+    display: none;
+}
+
+
+
+
+.frequency-scale input[type="radio"]:checked + .circle {
+    transform: scale(1.2);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+
+
+ textarea{
+    width: 100%;
+    height: 50%;
+    resize: none;
+    border: 1px solid #420202;
+    border-radius: 6px;
+    padding: 10px;
+    font-size: 14px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+
+
+
+/* ================================
+   11. ABOUT SECTION
+   Team page styling
+   ================================ */
+#aboutcontent {
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 5% 15%;
+    padding-left: 8%;
+    padding-right: 8%;
+    padding-bottom: 8%;
+    padding-top: 3%;
+    text-align: justify;
+    background: linear-gradient(135deg, #7b1e1e, #a33c3c);
+    color: #fff;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    font-family: "Segoe UI", Arial, sans-serif;
+    line-height: 1.6;
+    gap: 5px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    font-size: 20px;
+}
+
+
+
+
+#aboutcontent:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+
+
+
+#aboutcontent h2 {
+    font-size: 30px;
+    margin-bottom: 15px;
+    color: #ffd166;
+}
+
+
+
+
+#aboutcontent p {
+    max-width: 1100px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+
+
+
+#aboutcontent button {
+    background-color: #ff7f50;
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
+
+
+#aboutcontent button:hover {
+    background-color: #ff5722;
+}
+
+
+
+
+/* ================================
+   12. FLOATING BUTTONS
+   Fixed survey and submit buttons
+   ================================ */
+#surveybtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 14px 20px;
+    background: linear-gradient(135deg, #7b1e1e, #a83232);
+    color: yellow;
+    border: none;
+    border-radius: 50px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease;
+}
+
+
+
+
+#surveybtn:hover {
+    transform: scale(1.08);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
+    background: linear-gradient(135deg, #a83232, #c94f4f);
+}
+
+
+
+
+#surveybtn:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+#submitbtn {
+    display: block;
+    margin: 20px auto 0 auto;
+    padding: 14px 20px;
+    background: linear-gradient(135deg, #7b1e1e, #a83232);
+    color: yellow;
+    border: none;
+    border-radius: 50px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease;
+}
+
+
+
+
+#submitbtn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
+}
+
+
+
+
+#submitbtn:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+/* ================================
+   13. CONSENT SECTION
+   Privacy agreement modal styles
+   ================================ */
+#consentdiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-right: 15%;
+    margin-left: 15%;
+    margin-top: 5%;
+    margin-bottom: 10%;
+    border: solid 1px #ffffff;
+    background-color: white;
+    padding: 5%;
+    border-radius: 2%;
+    text-align: center;
+    color: #000000;
+    display: none;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    bottom: 1px;
+}
+
+
+
+
+#proceedbtn {
+    color: white;
+    background-color: #7b1e1e;
+    border: none;
+    height: 50px;
+    width: 200px;
+    border-radius: 5%;
+    transition: background-color 0.3s ease;
+}
+
+
+
+
+#proceedbtn:hover {
+    transform: scale(1.08);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
+    background: linear-gradient(135deg, #a83232, #c94f4f);
+    cursor: pointer;
+}
+
+
+
+
+#proceedbtn.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+
+
+
+#consentdiv h1 {
+    font-size: 40px;
+    font-weight: bold;
+    color: #7b1e1e;
+    margin-top: 0%;
+}
+
+
+
+
+#consentdiv h4 {
+    font-size: 25px;
+    font-weight: 600;
+    color: #7b1e1e;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+
+
+
+#consentdiv p {
+    font-size: 20px;
+    color: #333333;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+
+
+
+#consentdiv label {
+    font-size: 20px;
+    font-weight: 600;
+    color: #000000;
+    margin-bottom: 5px;
+    margin-top: 30px;
+}
+
+
+
+
+/* ================================
+   14. TEAM SECTION
+   Team member cards and layout
+   ================================ */
+.main-wrapper p, .main-wrapper li {
+    text-align: justify;
+}
+
+
+
+
+.main-wrapper p.role {
+    text-align: center;
+}
+
+
+
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    justify-items: center;
+    margin: 40px auto;
+    max-width: 900px;
+}
+
+
+
+
+.team-card {
+    text-align: center;
+    width: 100%;
+}
+
+
+
+
+.member-photo {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    border: 3px solid #d9c6a5;
+}
+
+
+
+
+.team-card h3 {
+    font-size: 16px;
+    color: #ffffff;
+    margin-bottom: 3px;
+}
+
+
+
+
+.role {
+    font-size: 14px;
+    color: #ffd166;
+    display: block;
+    margin-top: 0;
+}
+
+
+
+
+.category-title {
+    color: #ffd166;
+    text-align: center;
+}
+
