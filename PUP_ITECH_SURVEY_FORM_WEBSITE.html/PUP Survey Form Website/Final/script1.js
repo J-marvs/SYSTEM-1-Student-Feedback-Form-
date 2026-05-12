@@ -164,8 +164,3 @@ async function loadResults() {
 
 
 window.showSection = showSection;
-
-
-
-
-
