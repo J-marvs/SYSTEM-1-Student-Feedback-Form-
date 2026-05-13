@@ -347,6 +347,7 @@ header nav a:hover {
     color: #7b1e1e;
     font-weight: 600;
     font-size: 30px;
+    border-top: 10px solid #7b1e1e;
 }
 
 
