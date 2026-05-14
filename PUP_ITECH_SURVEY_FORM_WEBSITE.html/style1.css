@@ -20,24 +20,57 @@ body {
    2. HEADER & NAVIGATION
    Alternative header implementations and nav buttons
    ================================ */
-header {
-    background-color: #7b1e1e;
-    color: #fff;
-    padding: 15px 30px;
+#header {
     display: flex;
-    justify-content: space-between;
-    align-items: space-evenly;
+    align-items: left;
+    justify-content: left;
+    position: relative;
+    background-color: #7b1e1e;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: white;
+    height: 65px; 
+    
 }
 
 
 
 
-header img {
-    width: 60px;
-    height: 60px;
-    object-fit: cover;
-    margin-right: 15px;
+#header img {
+    height: 3.6rem;
+    width: 3.7rem;
+    margin-right: 10px;
+    size: 16px;
+    display: flex;
+    align-items: center;
+    padding-top: 0.2% ;
 }
+
+
+#title {
+    margin: 0;
+    color: white;
+    font-size: 1.8rem;
+}
+
+#subtitle {
+
+    margin: 0;
+    color: white;
+    font-size: 1.4rem;
+
+}
+
+#header-text{
+
+    display: inline;
+    height: 100%;
+    gap: 5px;
+    padding-top: 4px;
+}
+
 
 
 
