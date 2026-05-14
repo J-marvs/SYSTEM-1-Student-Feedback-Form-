@@ -565,6 +565,12 @@ form input[type="checkbox"], form input[type="radio"] {
     cursor: pointer;
     font-size: 14px;
     gap: 10px;
+    transition: 0.6s ease;
+}
+
+.likert-scale label:hover {
+    transition: 0.6s ease;
+    transform: scale(1.1);
 }
 
 
@@ -598,6 +604,11 @@ form input[type="checkbox"], form input[type="radio"] {
 
 
 .likert-scale input[type="radio"]:checked + .circle {
+    transform: scale(1.2);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+
+.likert-scale input[type="radio"]:hover + .circle {
     transform: scale(1.2);
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
 }
@@ -690,6 +701,12 @@ form input[type="checkbox"], form input[type="radio"] {
     cursor: pointer;
     font-size: 14px;
     gap: 6px;
+    transition: 0.6s ease;
+}
+
+.frequency-scale label:hover {
+    transform: scale(1.1);
+    transition: 0.6s ease;
 }
 
 
@@ -703,6 +720,11 @@ form input[type="checkbox"], form input[type="radio"] {
 
 
 .frequency-scale input[type="radio"]:checked + .circle {
+    transform: scale(1.2);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+
+.frequency-scale input[type="radio"]:hover + .circle {
     transform: scale(1.2);
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
 }
